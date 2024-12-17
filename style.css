@@ -109,14 +109,12 @@ h1 {
     padding: 71px;
   }
   .modal-content {
-    margin-top: 130px;
-    width: 165px;
+    width: 164px;
   }
   .side-menu {
     width: 220px;
   }
   .profile-button {
-    font-size: 14px;
     padding: 8px 15px;
   }
 }
