@@ -19,7 +19,7 @@ sideButton.addEventListener('click', () => {
 modalButton.addEventListener('click', () => {
     modalOverlay.style.display = modalOverlay.style.display === 'flex' ? 'none' : 'flex';
     dropdownMenu.style.display = 'none';
-    sideMenu.style.right = '-250px';
+    sideMenu.style.right = '-260px';
 });
 window.addEventListener('click', (e) => {
     if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
@@ -35,3 +35,4 @@ modalOverlay.addEventListener('click', (e) => {
         modalOverlay.style.display = 'none';
     }
 });
+
