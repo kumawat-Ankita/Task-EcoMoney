@@ -1,31 +1,37 @@
-const profileButton = document.getElementById("profile-button");
+const dropdownButton = document.getElementById('dropdownButton');
+const sideButton = document.getElementById('sideButton');
+const modalButton = document.getElementById('modalButton');
 
-// Menus
-const dropdownMenu = document.getElementById("dropdown-menu");
-const sideMenu = document.getElementById("side-menu");
-const modalMenu = document.getElementById("modal-menu");
+const dropdownMenu = document.getElementById('dropdownMenu');
+const sideMenu = document.getElementById('sideMenu');
+const modalOverlay = document.getElementById('modalOverlay');
 
-// Toggle visibility for dropdown menu
-profileButton.addEventListener("click", () => {
-    dropdownMenu.classList.toggle("hidden");
+dropdownButton.addEventListener('click', () => {
+    dropdownMenu.style.display = dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '' ? 'flex' : 'none';
+    sideMenu.style.right = '-250px';
+    modalOverlay.style.display = 'none';
+});
+sideButton.addEventListener('click', () => {
+    sideMenu.style.right = sideMenu.style.right === '0px' ? '-250px' : '0px';
+    dropdownMenu.style.display = 'none';
+    modalOverlay.style.display = 'none';
+});
+modalButton.addEventListener('click', () => {
+    modalOverlay.style.display = modalOverlay.style.display === 'flex' ? 'none' : 'flex';
+    dropdownMenu.style.display = 'none';
+    sideMenu.style.right = '-250px';
+});
+window.addEventListener('click', (e) => {
+    if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.style.display = 'none';
+    }
+    if (!sideButton.contains(e.target) && !sideMenu.contains(e.target)) {
+        sideMenu.style.right = '-250px';
+    }
 });
 
-// Side Menu Logic
-profileButton.addEventListener("dblclick", () => {
-    sideMenu.style.right = sideMenu.style.right === "0px" ? "-200px" : "0px";
-});
-
-// Modal Menu Logic
-profileButton.addEventListener("contextmenu", (e) => {
-    e.preventDefault();
-    modalMenu.classList.remove("hidden");
-});
-
-// Close menus when clicking outside
-document.addEventListener("click", (e) => {
-    if (!profileButton.contains(e.target)) {
-        dropdownMenu.classList.add("hidden");
-        modalMenu.classList.add("hidden");
-        sideMenu.style.right = "-200px";
+modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+        modalOverlay.style.display = 'none';
     }
 });

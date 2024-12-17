@@ -3,41 +3,40 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Profile Menu</title>
+        <title>Profile Menu Project</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Profile Menu Styles</h1>
+        <h1>Profile Menu</h1>
+        <div class="profile-container">
+            <button class="profile-button" id="dropdownButton">Profile
+                DropDown</button>
+            <button class="profile-button" id="sideButton">Profile Side
+                Menu</button>
+            <button class="profile-button" id="modalButton">Profile
+                Modal</button>
 
-        <!-- Profile Button -->
-        <button id="profile-button">Profile</button>
+            <!-- Dropdown Menu -->
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#">Profile Settings</a>
+                <a href="#">Account Settings</a>
+                <a href="#">Logout</a>
+            </div>
 
-        <!-- Simple Dropdown Menu -->
-        <div id="dropdown-menu" class="menu hidden">
-            <ul>
-                <li>Profile Settings</li>
-                <li>Account Settings</li>
-                <li>Logout</li>
-            </ul>
-        </div>
+            <!-- Side Menu -->
+            <div class="side-menu" id="sideMenu">
+                <a href="#">Profile Settings</a>
+                <a href="#">Account Settings</a>
+                <a href="#">Logout</a>
+            </div>
 
-        <!-- Side Menu -->
-        <div id="side-menu" class="menu hidden">
-            <ul>
-                <li>Profile Settings</li>
-                <li>Account Settings</li>
-                <li>Logout</li>
-            </ul>
-        </div>
-
-        <!-- Modal Popup -->
-        <div id="modal-menu" class="menu hidden">
-            <div class="modal-content">
-                <ul>
-                    <li>Profile Settings</li>
-                    <li>Account Settings</li>
-                    <li>Logout</li>
-                </ul>
+            <!-- Modal Popup -->
+            <div class="modal-overlay" id="modalOverlay">
+                <div class="modal-content">
+                    <a href="#">Profile Settings</a>
+                    <a href="#">Account Settings</a>
+                    <a href="#">Logout</a>
+                </div>
             </div>
         </div>
 
